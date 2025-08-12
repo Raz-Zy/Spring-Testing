@@ -6,8 +6,8 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface UserRepository {
     @Select("""
-        SELECT name FROM user
-        WHERE name = 'Tan Dara'
+        SELECT name from "user"
+        where name='Tan Dara'
     """)
     public String getUserName();
 }
