@@ -17,7 +17,14 @@ public class UserController {
     }
 
     @GetMapping
+    @Operation(summary="connect with user table")
     public String test(){
         return "Hello, " + userRepository.getUserName();
+    }
+
+    @GetMapping
+    @Operation(summary="string only")
+    public String hello(){
+        return "Hello, Hi bye bye";
     }
 }
