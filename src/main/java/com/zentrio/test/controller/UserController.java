@@ -2,7 +2,7 @@ package com.zentrio.test.controller;
 
 
 import com.zentrio.test.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,8 +16,15 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
-    @GetMapping
+    @GetMapping("/user")
+    @Operation(summary="connect with user table")
     public String test(){
         return "Hello, " + userRepository.getUserName();
+    }
+
+    @GetMapping("/hello")
+    @Operation(summary="string only")
+    public String hello(){
+        return "Hello, Hi bye bye";
     }
 }
